@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SceneComponent } from './scene/scene.component';
+import { NgtCanvas, extend } from 'angular-three';
+import * as THREE from 'three';
 
+ extend(THREE);
+
+/* the rest of the code remains the same */
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [NgtCanvas],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+
 })
 export class AppComponent {
-  title = 'angular-three';
+  protected sceneGraph = SceneComponent;
 }
